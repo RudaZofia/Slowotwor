@@ -1,0 +1,29 @@
+{
+  "name": "slowotwor",
+  "version": "0.0.1",
+  "description": "Speech recognition test",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RudaZofia/Slowotwor.git"
+  },
+  "keywords": [
+    "speech",
+    "recognition",
+    "test",
+    "sonus"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RudaZofia/Slowotwor/issues"
+  },
+  "homepage": "https://github.com/RudaZofia/Slowotwor#readme",
+  "dependencies": {
+    "@google-cloud/speech": "^3.6.0",
+    "sonus": "^1.0.3"
+  }
+}
