@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--<button class="talk">Start</button>-->
+  <h3 class="content"></h3>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const SpeechRecognition = window.webkitSpeechRecognition
+      const recognition = new SpeechRecognition()
+      recognition.lang = 'pl-PL';
+      recognition.start()
+      recognition.continuous = true;
+      recognition.onstart = function(event) {
+        console.log(event)
+        console.log('Słucham...')
+      }
+      recognition.onspeechend = function() {
+
+      }
+      recognition.onresult = function(event){
+        const current = event.resultIndex;
+        const transcript = event.results[current][0].transcript
+        content.textContent+= ' | ' + transcript
+        // console.log(event.results[0][0].transcript)
+      }
+      recognition.onend = function(event){
+        console.log(event)
+        recognition.start()
+      }
+      const btn = document.querySelector('.talk')
+      const content = document.querySelector('.content')
+      // btn.addEventListener('click', function () {
+
+      // })
+
+});
+  </script>
+</body>
+</html>
